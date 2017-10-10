@@ -11,6 +11,8 @@ def _parse_response(json_response):
         name = json_response[0]['nome']
         freq = json_response[0]['freq']
         alternatives = json_response[0]['nomes'].split(',')
+        if alternatives == ['']:
+            alternatives = []
 
     return name, freq, alternatives
 
