@@ -47,3 +47,21 @@ pip install rows lxml requests requests-cache xlrd xlwt ipython ipdb
 
 [http://censo2010.ibge.gov.br/nomes](http://censo2010.ibge.gov.br/nomes)
 
+
+```python
+names = rows.import_from_csv('names.csv')
+
+for name in names:
+    print(name)
+
+alternatives = set()
+for name in names:
+    alternatives.update(name.alternatives)
+
+print(alternatives)
+
+sum(name.female for name in names)
+
+```
+
+[generonumero/logradouros](https://github.com/generonumero/logradouros)
