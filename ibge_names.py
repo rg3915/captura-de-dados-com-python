@@ -1,4 +1,5 @@
 import requests
+import requests_cache
 
 
 def _parse_response(json_response):
@@ -48,5 +49,6 @@ def classify_by_sex(name):
     }
 
 
+requests_cache.install_cache('ibge-names')
 print(classify_by_sex('Regis'))
 print(classify_by_sex('xv'))
