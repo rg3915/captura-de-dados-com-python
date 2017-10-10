@@ -1,5 +1,6 @@
 import requests
 import requests_cache
+import rows
 
 
 def _parse_response(json_response):
@@ -51,6 +52,19 @@ def classify_by_sex(name):
     }
 
 
-requests_cache.install_cache('ibge-names')
-print(classify_by_sex('Regis'))
-print(classify_by_sex('xv'))
+def download_and_save(names, filename):
+    result = []
+    for name in names:
+        result.append(classify_by_sex(name))
+    table = rows.import_from_dicts(result)
+    rows.export_to_csv(table, filename)
+
+
+def main():
+    requests_cache.install_cache('ibge-names')
+    names = 'Rodrigo Marcos Nicolas Mauricio Regis Cleber Vitor Luis Arthur Leonardo'.split()
+    download_and_save(names, 'names.csv')
+
+
+if __name__ == '__main__':
+    main()
