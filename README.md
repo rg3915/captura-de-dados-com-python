@@ -34,6 +34,7 @@ pip install rows lxml requests requests-cache xlrd xlwt ipython ipdb
 * etree
 * pdfminer
 * pdftotext (poppler)
+* [rows]()
 * selector
 * slate
 * pandas
@@ -42,7 +43,7 @@ pip install rows lxml requests requests-cache xlrd xlwt ipython ipdb
 * regexp
 * string manipulation
 * json
-* jsonbender
+* [jsonbender]()
 
 [http://censo2010.ibge.gov.br/nomes](http://censo2010.ibge.gov.br/nomes)
 
