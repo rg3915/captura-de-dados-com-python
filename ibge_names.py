@@ -2,7 +2,7 @@ import requests
 
 
 def _parse_response(json_response):
-    if isinstance(json_response, dict):
+    if isinstance(json_response, dict) or json_response == []:
         freq = None
         name = None
         alternatives = None
@@ -49,3 +49,4 @@ def classify_by_sex(name):
 
 
 print(classify_by_sex('Regis'))
+print(classify_by_sex('xv'))
