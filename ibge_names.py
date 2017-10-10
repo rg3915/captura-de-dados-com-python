@@ -55,6 +55,7 @@ def classify_by_sex(name):
 def download_and_save(names, filename):
     result = []
     for name in names:
+        print(name)
         result.append(classify_by_sex(name))
     table = rows.import_from_dicts(result)
     rows.export_to_csv(table, filename)
